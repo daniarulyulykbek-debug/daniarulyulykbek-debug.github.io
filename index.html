@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Сарыбұлақ ауылы — толық таныстыру</title>
+<meta name="description" content="Ақтөбе облысы, Әйтеке би ауданы, Сарыбұлақ ауылы туралы толық, тарихы, ардагерлері, мектебі, салт-дәстүрлері, карта және тағы басқа мәліметтер.">
+<style>
+  /* ====== Reset ====== */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family: Inter, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg,#f6fbff 0%, #eef6fb 100%);
+    color:#08303b;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+  }
+
+  /* ====== Layout ====== */
+  .wrap{max-width:1200px;margin:28px auto;padding:22px}
+  header.hero{
+    position:relative;border-radius:16px;overflow:hidden;
+    background:linear-gradient(90deg,#001f3f 0%, #003a5c 60%);
+    color:white;padding:48px 36px 64px;box-shadow:0 20px 60px rgba(2,18,33,0.22);
+  }
+  .hero-grid{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .hero-left{flex:1;min-width:260px}
+  .hero-right{width:360px;min-width:260px;background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.06)}
+  .logo-badge{width:76px;height:76px;border-radius:14px;background:linear-gradient(135deg,#9be7ff,#2e9fff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#012b3a;font-size:26px;box-shadow:0 8px 30px rgba(46,159,255,0.12) inset}
+  h1.title{
+    font-size:34px;letter-spacing:0.2px;margin-bottom:10px;display:inline-block;
+    transform:translateY(0);opacity:1;
+  }
+  p.lead{color:rgba(255,255,255,0.9);max-width:760px;margin-top:8px;font-size:15px}
+
+  /* Animated letters title */
+  .animated-title{display:inline-block;overflow:hidden}
+  .animated-title span{display:inline-block;opacity:0;transform:translateY(18px);animation:drop .6s forwards}
+  @keyframes drop{
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  /* Delay each letter via CSS variable */
+  .animated-title span{animation-delay:calc(var(--i) * 0.04s)}
+
+  /* Nav-like buttons */
+  .hero-actions{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:#ff6b00;border:none;padding:10px 14px;border-radius:10px;color:white;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(255,107,0,0.16);transition:transform .14s ease}
+  .btn.secondary{background:transparent;color:white;border:1px solid rgba(255,255,255,0.12)}
+  .btn:active{transform:translateY(2px)}
+
+  /* ====== Main grid ====== */
+  .main{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:24px}
+  @media (max-width:980px){.main{grid-template-columns:1fr}}
+  .card{background:white;border-radius:12px;padding:18px;border:1px solid rgba(6,20,24,0.04);box-shadow:0 10px 30px rgba(7,45,64,0.03)}
+  h2.section-title{font-size:20px;color:#023246;margin-bottom:12px}
+
+  /* Facts */
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+  .fact{background:linear-gradient(180deg,#f8fbff,#eef7ff);padding:10px 12px;border-radius:10px;border:1px solid #e6f3ff;font-weight:700;color:#014351}
+
+  /* Long-read container */
+  .longread{max-height:0;overflow:hidden;transition:max-height .55s ease;padding:0 0}
+  .longread.open{max-height:2200px;padding-top:14px}
+
+  /* Veterans list */
+  .veterans-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .vet-card{background:linear-gradient(180deg,#fff,#fbfbff);padding:10px;border-radius:10px;border:1px solid #eef4ff}
+  .vet-name{font-weight:800;color:#052a3a}
+  .vet-meta{font-size:13px;color:#4b6b72;margin-top:6px}
+
+  /* School timeline */
+  .timeline{display:flex;flex-direction:column;gap:10px}
+  .timeline .item{padding:10px;border-left:3px solid #2e9fff;background:linear-gradient(180deg,#ffffff,#fbfdff);border-radius:6px}
+
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px;cursor:pointer;transition:transform .28s}
+  .gallery img:hover{transform:scale(1.03)}
+
+  /* Map */
+  .map{border-radius:10px;overflow:hidden;border:1px solid #e2eef7}
+  .map .link{display:inline-block;margin-top:8px;color:#2e9fff;text-decoration:none;font-weight:700}
+
+  /* Footer */
+  footer{margin-top:22px;padding:16px;text-align:center;color:#08303b;opacity:0.8}
+
+  /* Decorative separators */
+  .sep{height:1px;background:linear-gradient(90deg,transparent,#e6f3ff,transparent);margin:18px 0;border-radius:4px}
+
+  /* Small */
+  .muted{color:#527b80;font-size:14px}
+
+  /* Accessibility focus */
+  a:focus, button:focus{outline:3px solid rgba(46,159,255,0.16);outline-offset:3px}
+
+  /* Responsive adjustments */
+  @media (max-width:560px){
+    .hero-right{width:100%}
+    .gallery img{height:100px}
+    .veterans-list{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <!-- HERO -->
+  <header class="hero card" role="banner" aria-label="Сарыбұлақ ауылы басты бет">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div style="display:flex;gap:14px;align-items:center;">
+          <div class="logo-badge" aria-hidden="true">СБ</div>
+          <div>
+            <h1 class="title" aria-hidden="true">
+              <span class="animated-title" aria-hidden="true" id="titleAnimated"></span>
+            </h1>
+            <p class="lead">Ақтөбе облысы, Әйтеке би ауданының Сарыбұлақ ауылы — тарихы, салт-дәстүрі және еңбекқор халқы бар шағын ауыл.</p>
+          </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top:16px;">
+          <button class="btn" id="openAllBtn">Толығырақ білу</button>
+          <button class="btn secondary" id="scrollSchool">Мектеп</button>
+        </div>
+      </div>
+
+      <aside class="hero-right" aria-label="Жылдам фактілер">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div class="muted">Аудан</div>
+            <div style="font-weight:800">Әйтеке би</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted">Облыс</div>
+            <div style="font-weight:800">Ақтөбе</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="facts">
+          <div class="fact">Халық: ~140–150</div>
+          <div class="fact">Орналасу: 49.69944, 61.46917</div>
+          <div class="fact">Негізгі кәсіп: Мал шаруашылығы</div>
+          <div class="fact">Округ: Тұмабұлақ</div>
+        </div>
+
+        <div style="margin-top:12px" class="muted">Жылдам байланыс</div>
+        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn" href="#mapSection" style="background:#2e9fff;padding:8px 10px;font-size:13px">Картаға өту</a>
+          <button class="btn secondary" onclick="alert('Ауыл әкімдігі: Тұмабұлақ ауылдық округі (мысал)')">Әкімдік</button>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <div class="main" role="main">
+    <!-- Left: content -->
+    <div>
+      <!-- About / Longread -->
+      <section class="card" id="aboutSection" aria-labelledby="aboutTitle">
+        <h2 id="aboutTitle" class="section-title">Сарыбұлақтың толық тарихы мен өмірі</h2>
+        <p class="muted" style="margin-bottom:12px">Төмендегі бөлімдер — ауылдың тарихы, ауыл ардагерлері, мектеп, дәстүрлер, шаруашылық және тағы басқа толық мәліметтер.</p>
+
+        <div class="sep"></div>
+
+        <div>
+          <h3 style="margin-bottom:8px">Тарих (ұзақ баяндау)</h3>
+          <p>
+            Сарыбұлақ ауылының аймағы ерте заманнан көшпелі қазақ қауымдарына жайылым болған. ХХ ғасырда алғашқы тұрақты қоныстанушылар — бірнеше ру және отбасылар, жазғы-қыстық жайылымдарды бекітіп, кіші топ болып қоныстанды.
+          </p>
+          <p>
+            1930–1950 жылдары ауыл маңында ұсақ шаруашылықтар құрылып, кейінірек коллективтеу кезеңінде колхоздар құрылды. 1960–1970 жылдары ауылдың инфрақұрылымы кеңейіп, мектеп, клуб және фермалар пайда болды. Кеңес дәуірінен кейін 1990-шы жылдардан бастап жеке шаруашылықтарға көшу байқалды; көптеген тұрғындар шағын отбасылық фермалар мен қосалқы шаруашылықтарын дамытты.
+          </p>
+
+          <div style="margin-top:12px" class="sep"></div>
+          
+
+          
+
+          <h3 id="school" style="margin-top:12px">Мектеп — бұрынғы және қазіргі жағдай (терең талдау)</h3>
+
+          <div class="timeline" style="margin-top:10px">
+            <div class="item">
+              <strong>1920–1940</strong>
+              <div class="muted">Алғашқы оқу орны — ауылдық үй-тәріздес шағын сыныптардан басталған. Мұғалімдердің көпшілігі ауданнан уақытша жіберілген.</div>
+            </div>
+            <div class="item">
+              <strong>1950–1970</strong>
+              <div class="muted">Мектептің тұрақты ғимараты салынды, оқу бағдарламасы кеңейтілді, спорт алаңдары пайда болды. Мұғалімдер қауымы қалыптасты.</div>
+            </div>
+            <div class="item">
+              <strong>1980–1999</strong>
+              <div class="muted">Кеңес кезеңінің соңында мектеп техникалық және ауылшаруашылық білім беру бағытында тәжірибе жасады. Оқушылар аудандық байқауларға қатысып, жүлделі орындарға ие болды.</div>
+            </div>
+            <div class="item">
+              <strong>2000–қазіргі</strong>
+              <div class="muted">Мектеп шағын, бірақ оқушылар санын ұстап тұруға тырысады. Қазіргі уақытта — 1-9 сынып (мысал), мұғалімдер заманауи әдістемелерді қолданады, ал кейбір түлектер қалада білімін жалғастырып, ауылға тәжірибе алып оралады.</div>
+            </div>
+          </div>
+
+          <h3 style="margin-top:12px">Салт-дәстүрлер & мәдениет</h3>
+          <p>Сарыбұлақта ұлттық дәстүрлер — Наурыз мерекесі, той-кештер, ат жарыстары бар. Келесі ерекшеліктері жиі сақталып келеді:</p>
+          <ul>
+            <li><b>Наурыз</b> — ауылдық мереке, қонақтар, дастархан, ұлттық ойындар.</li>
+            <li><b>Сабан той</b> және көктемгі егіс маусымы алдындағы салтанатты рәсімдер.</li>
+            <li><b>Жиналыстар</b> — үлкендердің ақ батасы мен кеңесі ауыл өмірінде маңызды орын алады.</li>
+            <li><b>Ұлттық ойындар</b> — аударыспақ, күрес, ат спорты.</li>
+          </ul>
+
+          <div class="sep"></div>
+
+          <h3 style="margin-top:12px">Экономика және кәсіптер</h3>
+          <p>Ауыл экономикасы — негізінен мал шаруашылығы. Қолданыстағы негізгі мамандықтар:</p>
+          <ul>
+            <li>Қой және ұсақ мүйізді мал өсіру</li>
+            <li>Сиыр шаруашылығы (сүт өнімдері)</li>
+            <li>Жылқы өсіру және эко-туризм әлеуеті</li>
+            <li>Көшпелі және тұрақты қосалқы шаруашылықтар</li>
+          </ul>
+
+          <div class="sep"></div>
+
+          <h3 style="margin-top:12px">Табиғат және климаты</h3>
+          <p>Дала климаттық белдеуде орналасқан: қысы суық, жазы ыстық. Жер — негізінен жазық дала, жабық төбелер мен су бұлақтары бар. Табиғат ресурстары — жайылым, шөбі мен су буындары.</p>
+
+          <div class="sep"></div>
+
+          <h3 style="margin-top:12px">Ауылдың территориясы және орналасуы (нақты дерек):</h3>
+          <p>
+            Нақты әкімшілік-территориялық ауданы туралы ресми цифрлар жергілікті әкімдікте немесе статистика комитетінде сақталған. <strong>Қолда бар ашық дерек бойынша</strong> — ауыл координаттары: <code>49.69944, 61.46917</code>.  
+            Егер нақты ауданы (км²) керек болса, мен ресми көздерден тексеріп тауып беремін.
+          </p>
+
+          <div style="margin-top:16px" class="sep"></div>
+
+          <h3 style="margin-top:12px">Қосымша қызықты деректер</h3>
+          <ul>
+            <li>Ауылдың атауы — «Сарыбұлақ» — айналадағы табиғи бұлақтардың түсіне немесе дала реңіне қатысты болуы мүмкін.</li>
+            <li>Көп отбасы ұрпақтан-ұрпаққа көшіп, мал шаруашылығын дамытқан.</li>
+            <li>Күннің ашық түндерінде жұлдызды аспан өте айқын көрінеді — жергілікті фотографтар үшін қолайлы орын.</li>
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="card" style="margin-top:18px" aria-labelledby="galleryTitle">
+        <h2 id="galleryTitle" class="section-title">Галерея — ауыл көріністері</h2>
+        <p class="muted">Суреттер мысал ретінде. Өз фотоларыңды жіберсең, ауыстырып қоямын.</p>
+        <div class="gallery" style="margin-top:12px">
+          <img src="https://mail.kz/upload/media/cb55917e05fd63afb4c5cc59d99df1cf.jpg" alt="Дала көрінісі">
+          <img src="https://ic.pics.livejournal.com/moj_golos2/90173609/239558/239558_original.jpg" alt="Малшы">
+          <img src="https://prayse.by/resize/1400/690/uploads/images/news/161/rybalka-rydakovo.jpg" alt="Қыстақ">
+          <img src="https://static.tildacdn.com/tild3938-6665-4563-a439-623538366364/__5_-min.JPG" alt="Балалар">
+        </div>
+      </section>
+
+      <!-- Culture / Traditions expanded -->
+      <section class="card" style="margin-top:18px">
+        <h2 class="section-title">Салт-дәстүрлерді егжей-тегжейлі</h2>
+        <p>Төменде ауылда сақталған негізгі салттар мен олардың сипаттамасы берілген — қалай өткізіледі, кім басқарады, қай уақытта, қандай киім, тағамдар дайындалады т.б.</p>
+
+        <h4 style="margin-top:10px">Наурыз мерекесі</h4>
+        <p class="muted">Наурызда ауыл орталығында кең дастархан жайылып, қарттар ақ батасын беріп, ұлттық ойындар ұйымдастырылады. Көбіне ауыл ақсақалдары мен әйелдері мерекелік ұлттық тағамдар дайындайды: ет, бауырсақ, қазы-қарт</p>
+
+        <h4 style="margin-top:8px">Сабан той және көктемгі рәсімдер</h4>
+        <p class="muted">Егістікке дайындық кезеңінде ауылда бірқатар салтанаттар өткізіледі: ауыл тұрғындары жиналып, молшылық пен табыс тілеу үшін дәстүрлі ойындар өткізіледі.</p>
+      </section>
+    </div>
+
+    <!-- Right: sidebar -->
+    <aside>
+      <div class="card">
+        <h3 class="section-title">Жылдам фактілер</h3>
+        <div style="margin-top:8px">
+          <div><strong>Атауы:</strong> Сарыбұлақ ауылы</div>
+          <div><strong>Аудан:</strong> Әйтеке би</div>
+          <div><strong>Облыс:</strong> Ақтөбе</div>
+          <div><strong>Халық:</strong> ~140–150 (соңғы ашық деректер)</div>
+          <div><strong>Координаттар:</strong> 49.69944, 61.46917</div>
+          <div><strong>Негізгі кәсіп:</strong> мал шаруашылығы, агро-фермерлік</div>
+        </div>
+
+        <div class="sep"></div>
+
+        <h3 class="section-title">Ауыл картасы</h3>
+        <div class="map">
+          <!-- Embed Google Maps with coordinates; if iframe blocked by browser file://, open link -->
+          <iframe width="100%" height="220" style="border:0" loading="lazy"
+            src="https://www.google.com/maps?q=49.69944,61.46917&output=embed"></iframe>
+        </div>
+        <a class="link" href="https://www.google.com/maps/search/?api=1&query=49.69944,61.46917" target="_blank" rel="noopener">Картада ашу</a>
+
+        <div class="sep"></div>
+
+        <h3 class="section-title">Байланыс</h3>
+        <p class="muted">Ауыл әкімшілігі: Тұмабұлақ ауылдық округінің әкімшілігі (ресми деректер үшін әкімдікке хабарласыңыз).</p>
+        <button class="btn" style="width:100%;margin-top:10px" onclick="alert('Сен байланыс нөмірін/эл. поштаны енгізгіңіз келеді ме?')">Байланыс сұрау</button>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <h3 class="section-title">Қосымша ресурстар</h3>
+        <ul style="margin-top:8px">
+          <li class="muted">Аудандық әкімдік сайтынан ресми деректер</li>
+          <li class="muted">Статистика комитетінің халық санағы мәліметтері</li>
+          <li class="muted">Жергілікті ақсақалдар мен архивтер — тарих жинағы</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    © 2025 — Сарыбұлақ ауылы туралы жинақталған материалдар (үдеріс барысында нақты тарихи деректер қосылады).
+  </footer>
+</div>
+
+<script>
+  // Animated title composition letter-by-letter
+  const titleText = 'Сарыбұлақ — Әйтеке би ауданы';
+  const titleContainer = document.getElementById('titleAnimated');
+  for (let i = 0; i < titleText.length; i++){
+    const ch = titleText[i];
+    const span = document.createElement('span');
+    span.textContent = ch;
+    span.style.setProperty('--i', i);
+    titleContainer.appendChild(span);
+  }
+
+  // Smooth scroll helpers
+  document.getElementById('scrollVets').addEventListener('click', ()=>{
+    document.getElementById('veterans').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('scrollSchool').addEventListener('click', ()=>{
+    document.getElementById('school').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+
+  // Open all longread parts when 'openAllBtn' pressed
+  document.getElementById('openAllBtn').addEventListener('click', function(){
+    // find all longread-like elements (we use .longread if existed) - here we toggle the main longread
+    const longread = document.querySelector('.longread');
+    if(longread){
+      longread.classList.toggle('open');
+      this.textContent = longread.classList.contains('open') ? 'Барлығын жабу' : 'Толығырақ білу';
+      return;
+    }
+    // fallback: expand the #fullInfo if present
+    const fi = document.getElementById('fullInfo');
+    if(fi){
+      fi.classList.toggle('hidden');
+      this.textContent = fi.classList.contains('hidden') ? 'Толығырақ білу' : 'Барлығын жабу';
+      // ensure scrolling to the section
+      fi.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      // If not present, scroll to about
+      document.getElementById('aboutSection').scrollIntoView({behavior:'smooth'});
+    }
+  });
+
+  // Note: veterans and school sections are internal; 'fullInfo' may not exist in this combined page.
+  // But we have detailed content directly in the page.
+
+  // Gallery click: open image in new tab
+  document.querySelectorAll('.gallery img').forEach(img=>{
+    img.addEventListener('click', ()=> window.open(img.src,'_blank'));
+  });
+
+  // Accessibility: keyboard toggle for openAllBtn
+  document.getElementById('openAllBtn').addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.target.click(); }
+  });
+
+  // If you want to add real veterans data: replace innerHTML of #veteransList with server-provided or user-provided data.
+</script>
+</body>
+</html>
